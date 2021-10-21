@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(209, 199, 199);
+          
+}
+
+.container {
+    margin-top: 6rem;
+    margin-left: 15%;
+    width: 70%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "wheater-icon wheater-icon city"
+      "wheater-icon wheater-icon temp"
+      "description description humidity";
+  }
+  
+  .wheater-icon { grid-area: wheater-icon; }
+  
+  .description { grid-area: description; }
+  
+  .city { grid-area: city; }
+  
+  .temp { grid-area: temp; }
+  
+  .humidity { grid-area: humidity; }
+  
+ div{
+      border: solid black .125rem;
+  }
+
+img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: fill;
+
+}
+
+p{
+    font-size: 2rem;
+    padding:1.25rem ;
+}
+
+h1{
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: rgb(106, 106, 122);
+
+}
+
+@media(max-width: 650px){
+    h1{
+        display: none;
+    }
+    .container{
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+    }
+    p{
+        padding: 5rem
+    };
+    
+    img{
+        margin-top: 5rem;
+        padding: 5rem;
+    }
+}
+
+@media(max-width: 560px){
+    .container {
+        border: none;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+        "wheater-icon"
+        "city"
+          "description"
+          "humidity"
+          "temp"
+          ;
+      }
+      
+      .city { grid-area: city; }
+      
+      .description { grid-area: description; }
+      
+      .humidity { grid-area: humidity; }
+      
+      .temp { grid-area: temp; }
+      
+      .icon { grid-area: wheater-icon; }
+      
+    ;
+    p{
+        font-size: .5rem;
+    }
+}
